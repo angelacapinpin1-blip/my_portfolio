@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Code | My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Angela Capinpin</p>
+    <nav>
+      <a href="index.html">Personal Info</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
+      <a href="java.html" class="active">Java Code</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="banner">
+      <h2>Java Code</h2>
+    </div>
+
+    <div class="box">
+      <p>My final Performance Task (PeTa) in CC102: a console-based game.</p>
+<pre>import java.util.Scanner;
+
+public class DeliveryPackageCounter {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] packages = new int[12];
+        int total = 0;
+        int top = 0;     
+        int count = 0;   
+
+        for (int i = 0; i < 12; i++) {
+            do {
+                System.out.print("Enter packages delivered by rider " + i + ": ");
+                packages[i] = input.nextInt();
+                if (packages[i] < 0) {
+                    System.out.println("Invalid! Enter a nonnegative number.");
+                }
+            } while (packages[i] < 0);
+
+            total += packages[i];
+
+            if (packages[i] > packages[top]) {
+                top = i;
+            }
+            if (packages[i] >= 20) {
+                count++;
+            }
+        }
+
+        double average = total / 12.0;
+
+        System.out.println("Total deliveries: " + total);
+        System.out.println("Average deliveries: " + average);
+        System.out.println("Top rider: Rider " + top + " with " + packages[top] + " packages");
+        System.out.println("Riders with at least 20 deliveries: " + count);
+    }
+}</pre>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Angela Capinpin | Build Dreams. Code Futures.</p>
+  </footer>
+
+</body>
+</html>
